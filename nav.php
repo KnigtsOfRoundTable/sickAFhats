@@ -2,21 +2,16 @@
 
 <ul class="nav nav-tabs">
   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-  <li><a href="recipe.php"><i class="fa fa-lemon-o"></i> Recipes</a></li>
-  <li><a href="chefs.php"><i class="fa fa-lemon-o"></i> Chefs</a></li>
-  <?php
-      if(isset($_COOKIE['username'])){
-        echo '<li><a href="manage.php"><i class="fa fa-folder-o"></i> Manage</a></li>';
-      }
-  ?>
+  <li><a href="products.php"><i class="fa fa-lemon-o"></i> Products</a></li>
+  <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 </ul>
 
 <div class="searchDesk">
   <?php
       if(isset($_COOKIE['username'])){
-        echo 'Welcome, ';
-        echo $_COOKIE['first'] . ' ' . $_COOKIE['last'];
-        echo ' | <a href="logout.php">log out</a>';
+        echo 'Welcome, <a href="updateUser.php">';
+        echo $_COOKIE['name'] . ' <i class="fa fa-chevron-down"></i> ';
+        echo '</a> | <a href="logout.php">log out</a>';
       }else{
         echo '<a href="login.php">Log in</a>';
       }

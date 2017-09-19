@@ -20,6 +20,6 @@ foreach($_POST['skills'] as $skillSet_id){
 
 mysqli_close($dbconnect);
 
-header('Location: chefs.php');
+header('Location: purchaseHistory.php');
 
 ?>

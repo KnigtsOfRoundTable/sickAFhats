@@ -21,13 +21,13 @@ include 'head.php';
     <h2>Search for a Chef based on their Specialty</h2>
 
       <ul>
-        <li style="display:inline;margin:0 20px;"><a href="chefs.php">All</a></li>
+        <li style="display:inline;margin:0 20px;"><a href="purchaseHistory.php">All</a></li>
         <?php
         $query3 = "SELECT * FROM chef_specialty ORDER BY value";
         $result3 = mysqli_query($dbconnect, $query3) or die('login query failed');
 
           while($row3 = mysqli_fetch_array($result3)){
-            echo '<li style="display:inline;margin:0 20px;"><a href="chefs.php?specialty_id='.$row3['spec_id'].'">'.$row3['value'].'</a></li>';
+            echo '<li style="display:inline;margin:0 20px;"><a href="purchaseHistory.php?specialty_id='.$row3['spec_id'].'">'.$row3['value'].'</a></li>';
           }
          ?>
       </ul>

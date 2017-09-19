@@ -1,6 +1,6 @@
 <?php
 $id = $_GET['id'];
-require_once('protect.php');
+require_once('auth.php');
 require_once('variable.php');
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');

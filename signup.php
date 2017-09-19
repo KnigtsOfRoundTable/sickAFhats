@@ -13,17 +13,16 @@ if (isset($_POST['submit'])){
 
   if(!empty($username) && !empty($pw1) && !empty($pw2) && ($pw1 == $pw2)) {
       //check for duplicate usernames
-      $query = "SELECT * FROM cookies WHERE username = '$username'";
+      $query = "SELECT * FROM member WHERE username = '$username'";
       $duplicate = mysqli_query($dbconnect, $query) or die('duplicate query failed');
       if(mysqli_num_rows($duplicate) == 0){
-        $query = "INSERT INTO cookies (first, last, username, password, date) VALUES ('$first', '$last', '$username', SHA('$pw1'), NOW() )";
+        $query = "INSERT INTO member (username, password, name, email, phone, address, creditcard, date) VALUES ('$username', SHA('$pw1'), NOW(), '$name', '$email', '$phone', '$address', '$creditcard')";
         mysqli_query($dbconnect, $query) or die('insert new user query failed');
 
         $feedback = 'You are all signed up!';
 
         setcookie('username', $username, time() + (60*60*24*30)); // expires in 30 days
-        setcookie('first', $first, time() + (60*60*24*30));
-        setcookie('last', $last, time() + (60*60*24*30));
+        setcookie('name', $first, time() + (60*60*24*30));
 
         mysqli_close($dbconnect);
 

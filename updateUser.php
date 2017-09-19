@@ -1,5 +1,5 @@
 <?php
-require_once('auth.php');
+require_once('protect.php');
 require_once('variable.php');
 
 $id = $_GET['id'];

@@ -23,7 +23,6 @@
         <div class="col-xs-4">
         <br><br>
             <div class="text-center">
-                <a href="recipe.php">Recipes</a><br>
                 <a href="manage.php">Admin Login</a>
             </div>
         </div>

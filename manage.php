@@ -1,5 +1,5 @@
 <?php
-require_once('protect.php');
+require_once('auth.php');
 require_once('variable.php');
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
@@ -14,7 +14,7 @@ include 'head.php';
 
 <div class="row">
   <div class="col-xs-12 text-center">
-    <h1>Manage Recipe</h1>
+    <h1>Manage Products</h1>
   </div>
 </div>
 <div class="row">
@@ -28,7 +28,7 @@ include 'head.php';
           echo  '<h3>' . $row['recipeTitle'] . '</h3>';
           echo  '<p>'. $row['recipeType'] . '</p>';
           echo '<p>Prep Time: ' . $row['prepTime'] . ' Cook Time: ' . $row['cookTime'] .'</p>';
-          echo '<a href="admin_detail.php?id='.$row['id'].'">Detail view - </a> <a href="update.php?id='.$row['id'].'">Update</a> <a href=delete.php?id='.$row['id'].'> - Delete</a>';
+          echo '<a href="purchaseHistory.php">Purchase History - </a><a href="admin_detail.php?id='.$row['id'].'">Detail view - </a> <a href="update.php?id='.$row['id'].'">Update</a> <a href=delete.php?id='.$row['id'].'> - Delete</a>';
           echo  '</article>';
       }
       ?>
