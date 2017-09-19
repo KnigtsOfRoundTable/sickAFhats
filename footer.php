@@ -23,7 +23,7 @@
         <div class="col-xs-4">
         <br><br>
             <div class="text-center">
-                <a href="manage.php">Admin Login</a>
+                <a href="manage.php">Admin</a>
             </div>
         </div>
 

@@ -3,16 +3,15 @@ require_once('variable.php');
 
 include 'head.php';
 
-$email = $_POST[email];
-$recipeTitle = $_POST[recipeTitle];
-$recipeType = $_POST[recipeType];
-$prepTime = $_POST[prepTime];
-$cookTime = $_POST[cookTime];
-$ingredients = $_POST[ingredients];
-$instructions = $_POST[instructions];
+$title = $_POST[title];
+$shortdescription = $_POST[shortdescription];
+$longdescription = $_POST[longdescription];
+$price = $_POST[price];
+$shipping = $_POST[shipping];
+$tax = $_POST[tax];
 $picture = $_POST[picture];
 $ext =  pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-$filename = $recipeTitle . '.' . $ext;
+$filename = $title . '.' . $ext;
 $filepath = 'img/';
 $picturename = $filepath . $filename;
 $validImage = true;
@@ -42,17 +41,17 @@ if ($validImage == true){
 
     $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-    $query = "INSERT INTO recipe_manager (email, recipeTitle, recipeType, prepTime, cookTime, ingredients, instructions, picture)" .
-    "VALUES ('$email', '$recipeTitle', '$recipeType', '$prepTime', '$cookTime', '$ingredients', '$instructions', '$picturename')";
+    $query = "INSERT INTO products (title, shortdescription, longdescription, price, picture, shipping, tax)" .
+    "VALUES ('$title', '$shortdescription', '$longdescription', '$price', '$picturename', '$shipping', '$tax')";
 
     $result = mysqli_query($dbconnect, $query) or die('run query failed');
 
     mysqli_close($dbconnect);
 
-    echo '<h1 class="text-center">Recipe has been added</h1>';
+    echo '<h1 class="text-center">'. $title .' has been added</h1>';
 
 }else{
-    echo '<br /><div class="text-center"><a href="add.php"> Please upload file again</a></div><br />';
+    echo '<br /><div class="text-center"><a href="add.php"> Please upload Image again</a></div><br />';
 };
 
 echo  '</article></div></div>';

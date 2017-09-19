@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-$query = "SELECT * FROM recipe_manager WHERE id='$id'";
+$query = "SELECT * FROM products WHERE id='$id'";
 
 $result = mysqli_query($dbconnect, $query) or die('update query failed');
 
@@ -18,7 +18,7 @@ include 'head.php';
 
 <div class="row">
   <div class="col-xs-12 text-center">
-    <h1>Update Recipe</h1>
+    <h1>Update <?php echo $found['title'] ?></h1>
     <br /><br />
   </div>
 </div>
@@ -30,30 +30,26 @@ include 'head.php';
 
       <form action="updateDatabase.php" method="POST" enctype="multipart/form-data" class="form-horizontal padding-sm">
       <div class="form-group">
-          <span>Email <input type="text" name="email" value="<?php echo $found['email'] ?>" class="form-control "></span>
+          <span>Title <input type="text" name="title" value="<?php echo $found['title'] ?>" class="form-control "></span>
         </div>
         <div class="form-group">
-          <span>Recipe Title <input type="text" name="recipeTitle" value="<?php echo $found['recipeTitle'] ?>" placeholder="Chili Hamburger" class="form-control "></span>
-        </div>
-
-        <div class="form-group">
-          <span>Recipe Type <input type="text" name="recipeType" value="<?php echo $found['recipeType'] ?>" placeholder="Breakfast/Lunch/Dinner" class="form-control"></span>
+          <span>Short Description <input type="textarea" name="shortdescription" value="<?php echo $found['shortdescription'] ?>" class="form-control "></span>
         </div>
 
         <div class="form-group">
-          <span>Prep Time <input type="number" name="prepTime" value="<?php echo $found['prepTime'] ?>" placeholder="30" class="form-control"></span>
+          <span>Long Description <input type="textarea" name="longdescription" value="<?php echo $found['longdescription'] ?>" class="form-control"></span>
         </div>
 
         <div class="form-group">
-          <span>Cook Time <input type="number" name="cookTime" value="<?php echo $found['cookTime'] ?>" placeholder="20" class="form-control"></span>
+          <span>Price $<input type="number" name="price" value="<?php echo $found['price'] ?>" placeholder="30.00" step=".01" class="form-control"></span>
         </div>
 
         <div class="form-group">
-          <span>Ingredients <input type="text" name="ingredients" value="<?php echo $found['ingredients'] ?>" placeholder="2 apples, 5 oranges, 4 bananas" class="form-control"></span>
+          <span>Shipping $<input type="number" name="shipping" value="<?php echo $found['shipping'] ?>" placeholder="20.00" step=".01" class="form-control"></span>
         </div>
 
         <div class="form-group">
-          <span>Instructions <input type="textarea" name="instructions" value="<?php echo $found['instructions'] ?>" class="form-control"></span>
+          <span>Tax $<input type="number" name="tax" value="<?php echo $found['tax'] ?>" placeholder="0.065" step=".01" class="form-control"></span>
         </div>
 
         <div class="form-group">

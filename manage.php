@@ -4,7 +4,7 @@ require_once('variable.php');
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-$query = "SELECT * FROM recipe_manager";
+$query = "SELECT * FROM products";
 
 $result = mysqli_query($dbconnect, $query) or die('run query failed');
 
@@ -24,17 +24,18 @@ include 'head.php';
       <?php
         while($row = mysqli_fetch_array($result)){
           echo '<article class="margin-sm padding-sm clearfix panel panel-default">';
-          echo '<figure id="manageImg"><img src="'. $row['picture'] .'" alt="Recipe" /> </figure>';
-          echo  '<h3>' . $row['recipeTitle'] . '</h3>';
-          echo  '<p>'. $row['recipeType'] . '</p>';
-          echo '<p>Prep Time: ' . $row['prepTime'] . ' Cook Time: ' . $row['cookTime'] .'</p>';
-          echo '<a href="purchaseHistory.php">Purchase History - </a><a href="admin_detail.php?id='.$row['id'].'">Detail view - </a> <a href="update.php?id='.$row['id'].'">Update</a> <a href=delete.php?id='.$row['id'].'> - Delete</a>';
+          echo '<figure id="manageImg"><img src="'. $row['picture'] .'" alt="Product" /> </figure>';
+          echo  '<h3>' . $row['title'] . '</h3>';
+          echo '<p>Price: $' . $row['price'] . ' | Shipping: $' . $row['shipping'] . ' | Tax: $' . $row['tax'] .'</p>';
+          echo  '<p>'. $row['shortdescription'] . '</p>';
+          echo '<a href="admin_detail.php?id='.$row['id'].'"> Detail view </a> | <a href="update.php?id='.$row['id'].'"> Update </a> | <a href=delete.php?id='.$row['id'].'> Delete</a>';
           echo  '</article>';
       }
       ?>
       </form>
       <br /><br />
-      <a href="add.php" class="padding-sm"><button class="btn btn-success btn-lg">Add a new Recipe</button></a>
+      <a href="add.php" class="padding-sm"><button class="btn btn-success btn-lg">Add a new Product</button></a>
+      <a href="purchaseHistory.php"><button class="btn btn-success btn-lg">Purchase History</button></a>
       <br /><br />
   </div>
 </div>

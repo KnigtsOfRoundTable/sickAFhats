@@ -2,19 +2,18 @@
 require_once('auth.php');
 require_once('variable.php');
 
-$email = $_POST['email'];
-$recipeTitle = $_POST['recipeTitle'];
-$recipeType = $_POST['recipeType'];
-$prepTime = $_POST['prepTime'];
-$cookTime = $_POST['cookTime'];
-$ingredients = $_POST['ingredients'];
-$instructions = $_POST['instructions'];
+$title = $_POST[title];
+$shortdescription = $_POST[shortdescription];
+$longdescription = $_POST[longdescription];
+$price = $_POST[price];
+$shipping = $_POST[shipping];
+$tax = $_POST[tax];
 $picture = $_POST['picture'];
 $id = $_POST['id'];
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-$query = "SELECT * FROM recipe_manager WHERE id='$id'";
+$query = "SELECT * FROM products WHERE id='$id'";
 
 $result = mysqli_query($dbconnect, $query) or die('update query failed');
 
@@ -23,7 +22,7 @@ $found = mysqli_fetch_array($result);
 include 'head.php';
 
 $ext =  pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-$filename = $recipeTitle . '.' . $ext;
+$filename = $title . '.' . $ext;
 $filepath = 'img/';
 $picturename = $filepath . $filename;
 $validImage = true;
@@ -45,18 +44,18 @@ if ($validImage == true){
 
     $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-    $query = "UPDATE recipe_manager SET email='$email', recipeTitle='$recipeTitle', recipeType='$recipeType', prepTime='$prepTime',  cookTime='$cookTime', ingredients='$ingredients', instructions='$instructions', picture='$picturename' WHERE id=$id";
+    $query = "UPDATE products SET title='$title', shortdescription='$shortdescription', longdescription='$longdescription', price='$price',  picture='$picturename', shipping='$shipping', tax='$tax' WHERE id=$id";
 
     $result = mysqli_query($dbconnect, $query) or die('update db query failed');
 
     mysqli_close($dbconnect);
 
-    echo '<h1 class="text-center">Recipe has been Updated</h1>';
+    echo '<h1 class="text-center">'. $title . ' has been Updated</h1>';
 
     header( "refresh:3;url=manage.php" );
 
 }else{
-    echo '<br /><div class="text-center"><a href="add.php"> Please upload file again</a></div><br />';
+    echo '<br /><div class="text-center"><a href="add.php"> Please upload Image again</a></div><br />';
 };
 
 echo  '</article></div></div>';
