@@ -2,7 +2,8 @@
 
 <ul class="nav nav-tabs">
   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-  <li><a href="products.php"><i class="fa fa-lemon-o"></i> Products</a></li>
+  <li><a href="products.php"><i class="fa fa-automobile"></i> Products</a></li>
+  <li><a href="email.php"><i class="fa fa-bell"></i> Contact</a></li>
   <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 </ul>
 
