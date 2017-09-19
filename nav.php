@@ -10,7 +10,7 @@
 <div class="searchDesk">
   <?php
       if(isset($_COOKIE['username'])){
-        echo 'Welcome, <a href="updateUser.php">';
+        echo 'Welcome, <a href="updateUser.php?id='.$_COOKIE['id'].'">';
         echo $_COOKIE['name'] . ' <i class="fa fa-chevron-down"></i> ';
         echo '</a> | <a href="logout.php">log out</a>';
       }else{

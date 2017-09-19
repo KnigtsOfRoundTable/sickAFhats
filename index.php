@@ -3,7 +3,7 @@ require_once('variable.php');
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-$query = "SELECT * FROM recipe_manager";
+$query = "SELECT * FROM member";
 
 $result = mysqli_query($dbconnect, $query) or die('run query failed');
 

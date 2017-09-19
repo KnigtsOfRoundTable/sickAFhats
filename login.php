@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
   $username = mysqli_real_escape_string($dbconnect, trim($_POST['username']));
   $pw = mysqli_real_escape_string($dbconnect, trim($_POST['pw']));
 
-  $query = "SELECT * FROM cookies WHERE username = '$username' AND password = SHA('$pw')";
+  $query = "SELECT * FROM member WHERE username = '$username' AND password = SHA('$pw')";
   $data = mysqli_query($dbconnect, $query) or die('login query failed');
 
   if(mysqli_num_rows($data) == 1){
@@ -17,8 +17,8 @@ if(isset($_POST['submit'])){
     $row = mysqli_fetch_array($data);
 
     setcookie('username', $username, time() + (60*60*24*30));
-    setcookie('first', $row['first'], time() + (60*60*24*30));
-    setcookie('last', $row['last'], time() + (60*60*24*30));
+    setcookie('name', $row['name'], time() + (60*60*24*30));
+    setcookie('id', $row['id'], time() + (60*60*24*30));
 
     mysqli_close($dbconnect);
 
