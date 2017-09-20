@@ -22,9 +22,11 @@ include 'head.php';
 	</article>
   </div>
 </div>
+<form action="checkout.php" method="POST" enctype="multipart/form-data" class="form-horizontal padding-sm">
 <div class="row">
   <div class="col-xs-1"></div>
   <div class="col-xs-10">
+  
   <?php
 
 while($row1 = mysqli_fetch_array($result1)){
@@ -38,6 +40,8 @@ while($row1 = mysqli_fetch_array($result1)){
           echo '<p>Price: $' . $row2['price'] . '</p>';
           echo  '<p>'. $row2['shortdescription'] . '</p>';
           echo '<a style="color:red;" href=deleteCartItem.php?id='.$row1['id'].'> Remove</a>';
+          echo '<input type="hidden" name="product_id'.$row2['id'].'" value="'.$row2['id'].'">';
+          echo '<input type="hidden" name="Item:'.$row2['title'].'" value="'.$row2['price'].'">';
           echo  '</article>';
       };
     };
@@ -46,13 +50,16 @@ while($row1 = mysqli_fetch_array($result1)){
   ?>
   </div>
 </div>
-
+<br /><br />
 <div class="row">
-  <div class="col-xs-12 text-center">
-      <br /><br />
-      <a href="checkout.php" class="padding-sm"><button class="btn btn-success btn-lg">Proceed to Checkout</button></a>
+	<div class="col-sm-1 text-center"></div>
+  <div class="col-sm-10 text-center">
+    <br /><br />
+      <a href="products.php" class="padding-sm" style="margin-right: 50px;"><button class="btn btn-success btn-lg">Shop Some More</button></a>
+      <input type="submit"  class="btn btn-lg btn-success" name="submit" value="Proceed to Checkout" id="submit"/>
       <br /><br /><br /><br />
-    </div>
+  </div>
 </div>
+</form>
 
 <?php include 'footer.php'; ?>

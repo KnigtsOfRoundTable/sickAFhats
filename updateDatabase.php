@@ -6,8 +6,8 @@ $title = $_POST[title];
 $shortdescription = $_POST[shortdescription];
 $longdescription = $_POST[longdescription];
 $price = $_POST[price];
-$shipping = $_POST[shipping];
-$tax = $_POST[tax];
+$shipping = $price * .199;
+$tax = $price * 0.065;
 $picture = $_POST['picture'];
 $id = $_POST['id'];
 
