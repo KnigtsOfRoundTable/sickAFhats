@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     
     mysqli_close($dbconnect2);
     
-    header('Location: index.php');
+    header('Location: cart.php');
   
   }else{
     $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
