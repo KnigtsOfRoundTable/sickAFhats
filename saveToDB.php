@@ -7,28 +7,42 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
 $creditcard = $_POST['creditcard'];
 $subTotal = $_POST['subTotal'];
-$productArray = $_POST['productArray'];
-$titleArray = $_POST['titleArray'];
-$amountArray = $_POST['amountArray'];
+$products = $_POST['productArray'];
 
 require_once('variable.php');
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
-$query = "INSERT INTO send_information (subtotal, name, email, phone, address, creditcard) VALUES ('$subtotal', '$name', '$email', '$phone', '$address', '$creditcard')";
+$query = "INSERT INTO send_information (subtotal, name, email, phone, address, creditcard, products, date) VALUES ('$subTotal', '$name', '$email', '$phone', '$address', '$creditcard', '$products', NOW() )";
 $result = mysqli_query($dbconnect, $query) or die('add to db query failed');
 
-$recent_id = mysqli_insert_id($dbconnect);
+$subject = "Your Order has been sent.";
+$message = "Thank You for your business ". $name . ", Here are the details of your order: You ordered " . $products . "(s). The subtotal of your order: $". $subTotal . ". Your items will be sent to: ". $address . ". Thank you for your business and hope you have a fantHATic day.";
+$from = "kylejohnson2612@gmail.com";
+$to = $email;
 
-foreach($_POST['skills'] as $skillSet_id){
-  $query = "INSERT INTO chef_skillSet (chef_id, skill_id) VALUES ('$recent_id', '$skillSet_id')";
-  $result = mysqli_query($dbconnect, $query) or die('login query failed');
-};
+mail($to, $subject, $message, 'From:' . $from);
+
+$query2 = "DELETE FROM cart WHERE mem_id=$mem_id";
+
+$result2 = mysqli_query($dbconnect, $query2) or die('delete query failed');
 
 mysqli_close($dbconnect);
 
-print_r( $_POST );
-print_r( $titleArray );
-print_r( $amountArray );
-print_r( $productArray );
+include 'head.php';  
 
 ?>
+<br /><br />
+<div class="row">
+<div class="col-xs-1"></div>
+  <div class="col-xs-10 text-center">
+    <article class="clearfix panel panel-default">
+      <?php
+      echo '<h1>Thank You</h1><p>Your order will arrive within 3-5 business days. </p>';
+      ?>
+      <br /><br />
+    </article>
+  </div>
+</div>
+<br /><br />
+
+<?php include 'footer.php'; ?>

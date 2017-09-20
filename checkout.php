@@ -11,11 +11,6 @@ $amountArray = array();
 $timesPrice = array();
 
 foreach($_POST as $k => $v) {
-  if(strpos($k, 'product') === 0) {
-      array_push($productArray, $v);
-  }
-}
-foreach($_POST as $k => $v) {
   if(strpos($k, 'title') === 0) {
       array_push($titleArray, $v);
   }
@@ -41,7 +36,12 @@ foreach($_POST as $k => $v) {
   }
 }
 
-
+for($i = 0; $i < count($titleArray); ++$i) {
+  $inputtitle = $titleArray[$i];
+  $inputamount = $amountArray[$i];
+  array_push($productArray, $inputamount);
+  array_push($productArray, $inputtitle);
+}
 
 for($i = 0; $i < count($priceArray); ++$i) {
   $inputprice = $priceArray[$i];
@@ -50,6 +50,9 @@ for($i = 0; $i < count($priceArray); ++$i) {
   array_push($timesPrice, $newPrice);
 
 }
+
+$stringProducts = implode(",", $productArray);
+
 $priceTotal = array_sum($timesPrice);
 $shippingTotal = array_sum($shippingArray);
 $taxTotal = array_sum($taxArray);
@@ -103,10 +106,8 @@ include 'head.php';
       <span>Credit Card Number<input type="number" name="creditcard" value="'.$row1['creditcard'] .'" class="form-control"></span>
       </div>
 
-      <input type="hidden" name="subtotal" value="'.$subTotal .'">
-      <input type="hidden" name="productArray" value="'.$productArray[0] .'">
-      <input type="hidden" name="titleArray" value="'.$titleArray[0] .'">
-      <input type="hidden" name="amountArray" value="'.$amountArray[0] .'">';
+      <input type="hidden" name="subTotal" value="'.$subTotal .'">
+      <input type="hidden" name="productArray" value="'.$stringProducts .'">';
 
       echo'<h1 class="text-center">Subtotal: $' . $subTotal . '</h1>';
 
@@ -139,10 +140,11 @@ include 'head.php';
       ?>
       </div>
       </div>
+      <br /><br />
       <?php
       echo "Total Item Price: $" . $priceTotal . "<br />";
       echo "Total Shipping Price: $" . $shippingTotal . "<br />";
-      echo "Total Tax Price: $" . $taxTotal . "<br />";
+      echo "Total Tax Price: $" . $taxTotal . "<br /><br />";
       echo "Subtotal: $" . $subTotal  . "<br />";
       
       ?>
