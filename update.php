@@ -15,14 +15,16 @@ $found = mysqli_fetch_array($result);
 include 'head.php'; 
 
 ?>
-
+<br /><br />
 <div class="row">
-  <div class="col-xs-12 text-center">
+	<div class="col-sm-1 text-center"></div>
+  <div class="col-sm-10 text-center">
+	<article class="clearfix panel panel-default">
     <h1>Update <?php echo $found['title'] ?></h1>
     <br /><br />
+	</article>
   </div>
 </div>
-
 <div class="row">
   <div class="col-xs-1"></div>
   <div class="col-xs-10">

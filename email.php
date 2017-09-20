@@ -1,42 +1,23 @@
 <?php
-require_once('variable.php');
-
-if(isset($_POST['submit'])){
-
-$dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
-$id = $_COOKIE['id'];
-$query = "SELECT * FROM member WHERE id=$id";
-
-$result = mysqli_query($dbconnect, $query) or die('email query failed');
-
-$found = mysqli_fetch_array($result);
-
-$email = $found['email'];
-$subject = $_POST[subject];
-$message = $_POST[message];
-
-//Write the Email
-$to = 'kylejohnson2612@gmail.com';
-
-//Send the Email
-mail($to, $subject, $message, 'FROM:'.$email);
-
-};
-
 
 include 'head.php';
 
 ?>
+<br /><br />
 <div class="row">
-  <div class="col-sm-12 text-center">
-  <h1>Send Email</h1>
+	<div class="col-sm-1 text-center"></div>
+  <div class="col-sm-10 text-center">
+	<article class="clearfix panel panel-default">
+  	<h1>Contact Us</h1>
+		<p>Fill out the form below to contact us with any questions that you have.</p>
+	</article>
   </div>
 </div>
 <div class="row">
 <div class="col-sm-1"></div>
   <div class="col-sm-10">
     <article class="clearfix panel panel-default">
-      <form action="email.php" method="POST" enctype="multipart/form-data">
+      <form action="sendEmail.php" method="POST" enctype="multipart/form-data">
 					<div class="col-sm-12">
 
 						<div class="form-group">
@@ -54,7 +35,7 @@ include 'head.php';
 						  </div>
 						</div><!-- End message input -->
 
-						<button type="submit" class="btn btn-success" name="submit">Send Email</button>
+						<input type="submit" value="Send" class="submitBtn btn btn-success btn-lg-2" id="submit" />
 
 					</div>
       	</form><!-- End contact-form -->

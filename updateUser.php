@@ -15,11 +15,13 @@ $found = mysqli_fetch_array($result);
 include 'head.php'; 
 
 ?>
-
+<br /><br />
 <div class="row">
-  <div class="col-xs-12 text-center">
-    <h1>Update Recipe</h1>
-    <br /><br />
+	<div class="col-sm-1 text-center"></div>
+  <div class="col-sm-10 text-center">
+	<article class="clearfix panel panel-default">
+  	<h1>Update Your Infomation</h1>
+	</article>
   </div>
 </div>
 

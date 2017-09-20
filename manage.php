@@ -11,10 +11,18 @@ $result = mysqli_query($dbconnect, $query) or die('run query failed');
 include 'head.php';
 
 ?>
-
+<br /><br />
 <div class="row">
-  <div class="col-xs-12 text-center">
-    <h1>Manage Products</h1>
+	<div class="col-sm-1 text-center"></div>
+  <div class="col-sm-10 text-center">
+	<article class="clearfix panel panel-default">
+  	<h1>Manage Products</h1>
+		<p>View Details, Update the product, and delete it</p>
+    <br /><br />
+      <a href="add.php" class="padding-sm"><button class="btn btn-success btn-lg">Add a new Product</button></a>
+      <a href="purchaseHistory.php"><button class="btn btn-success btn-lg">Purchase History</button></a>
+      <br /><br />
+	</article>
   </div>
 </div>
 <div class="row">
@@ -34,8 +42,6 @@ include 'head.php';
       ?>
       </form>
       <br /><br />
-      <a href="add.php" class="padding-sm"><button class="btn btn-success btn-lg">Add a new Product</button></a>
-      <a href="purchaseHistory.php"><button class="btn btn-success btn-lg">Purchase History</button></a>
       <br /><br />
   </div>
 </div>
