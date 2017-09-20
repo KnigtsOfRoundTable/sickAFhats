@@ -37,6 +37,7 @@ while($row1 = mysqli_fetch_array($result1)){
           echo  '<div class="col-xs-8"><h3>' . $row2['title'] . '</h3>';
           echo '<p>Price: $' . $row2['price'] . '</p>';
           echo  '<p>'. $row2['shortdescription'] . '</p>';
+          echo '<a style="color:red;" href=deleteCartItem.php?id='.$row1['id'].'> Remove</a>';
           echo  '</article>';
       };
     };
