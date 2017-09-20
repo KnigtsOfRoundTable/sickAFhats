@@ -13,11 +13,13 @@ $result2 = mysqli_query($dbconnect, $query2) or die('product query failed');
 
 include 'head.php';
  ?>
-
+<br /><br />
 <div class="row">
-  <div class="col-xs-12 text-center">
-    <h1>Your Cart</h1>
-      <br /><br />
+	<div class="col-sm-1 text-center"></div>
+  <div class="col-sm-10 text-center">
+	<article class="clearfix panel panel-default">
+  	<h1>Your Cart</h1>
+	</article>
   </div>
 </div>
 <div class="row">
