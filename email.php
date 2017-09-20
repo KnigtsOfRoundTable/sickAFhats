@@ -1,15 +1,28 @@
 <?php
 require_once('variable.php');
 
-$id = $_GET['id'];
+if(isset($_POST['submit'])){
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
-
-$query = "SELECT * FROM recipe_manager WHERE id=$id";
+$id = $_COOKIE['id'];
+$query = "SELECT * FROM member WHERE id=$id";
 
 $result = mysqli_query($dbconnect, $query) or die('email query failed');
 
 $found = mysqli_fetch_array($result);
+
+$email = $found['email'];
+$subject = $_POST[subject];
+$message = $_POST[message];
+
+//Write the Email
+$to = 'kylejohnson2612@gmail.com';
+
+//Send the Email
+mail($to, $subject, $message, 'FROM:'.$email);
+
+};
+
 
 include 'head.php';
 
@@ -23,7 +36,7 @@ include 'head.php';
 <div class="col-sm-1"></div>
   <div class="col-sm-10">
     <article class="clearfix panel panel-default">
-      <form action="sendEmail.php" method="POST" enctype="multipart/form-data">
+      <form action="email.php" method="POST" enctype="multipart/form-data">
 					<div class="col-sm-12">
 
 						<div class="form-group">
@@ -41,7 +54,7 @@ include 'head.php';
 						  </div>
 						</div><!-- End message input -->
 
-						<input type="submit" value="Send" class="submitBtn btn btn-success btn-lg-2" id="submit" />
+						<button type="submit" class="btn btn-success" name="submit">Send Email</button>
 
 					</div>
       	</form><!-- End contact-form -->
