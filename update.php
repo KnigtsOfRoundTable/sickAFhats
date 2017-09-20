@@ -47,14 +47,6 @@ include 'head.php';
         </div>
 
         <div class="form-group">
-          <span>Shipping $<input type="number" name="shipping" value="<?php echo $found['shipping'] ?>" placeholder="20.00" step=".01" class="form-control"></span>
-        </div>
-
-        <div class="form-group">
-          <span>Tax $<input type="number" name="tax" value="<?php echo $found['tax'] ?>" placeholder="0.065" step=".01" class="form-control"></span>
-        </div>
-
-        <div class="form-group">
           <span>Photo<input type="file" name="picture" value="<?php echo $found['picture'] ?>" placeholder="<?php echo $found['picture'] ?>" class="form-control"></span>
         </div>
 

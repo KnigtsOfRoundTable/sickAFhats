@@ -27,14 +27,6 @@
           </div>
 
           <div class="form-group">
-            <span>Shipping $<input type="number" required name="shipping" value="" placeholder="20.00" step=".01" class="form-control" /></span>
-          </div>
-
-          <div class="form-group">
-            <span>Tax $<input type="number" required name="tax" value="" placeholder="0.06" step=".01" class="form-control" /></span>
-          </div>
-
-          <div class="form-group">
             <span>Photo (300px x 300px)<input type="file" name="picture" value="" class="form-control" /></span>
           </div>
 
