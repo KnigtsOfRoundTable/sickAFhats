@@ -1,14 +1,20 @@
 <?php
-$first = $_POST['first'];
-$last = $_POST['last'];
-$gender = $_POST['gender'];
+$mem_id = $_COOKIE['id'];
+
+$name = $_POST['name'];
 $email = $_POST['email'];
-$specialty = $_POST['specialty'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$creditcard = $_POST['creditcard'];
+$subTotal = $_POST['subTotal'];
+$productArray = $_POST['productArray'];
+$titleArray = $_POST['titleArray'];
+$amountArray = $_POST['amountArray'];
 
 require_once('variable.php');
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
-$query = "INSERT INTO chef (first, last, gender, email, specialty_id) VALUES ('$first', '$last', '$gender', '$email', '$specialty')";
+$query = "INSERT INTO send_information (subtotal, name, email, phone, address, creditcard) VALUES ('$subtotal', '$name', '$email', '$phone', '$address', '$creditcard')";
 $result = mysqli_query($dbconnect, $query) or die('add to db query failed');
 
 $recent_id = mysqli_insert_id($dbconnect);
@@ -20,6 +26,9 @@ foreach($_POST['skills'] as $skillSet_id){
 
 mysqli_close($dbconnect);
 
-header('Location: purchaseHistory.php');
+print_r( $_POST );
+print_r( $titleArray );
+print_r( $amountArray );
+print_r( $productArray );
 
 ?>

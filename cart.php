@@ -39,9 +39,13 @@ while($row1 = mysqli_fetch_array($result1)){
           echo  '<div class="col-xs-8"><h3>' . $row2['title'] . '</h3>';
           echo '<p>Price: $' . $row2['price'] . '</p>';
           echo  '<p>'. $row2['shortdescription'] . '</p>';
+          echo '<div class="form-group"><span>Quantity<input type="number" name="amount'.$row2['id'].'" value="" class="form-control" required></span></div><br /><br />';
           echo '<a style="color:red;" href=deleteCartItem.php?id='.$row1['id'].'> Remove</a>';
-          echo '<input type="hidden" name="product_id'.$row2['id'].'" value="'.$row2['id'].'">';
-          echo '<input type="hidden" name="Item:'.$row2['title'].'" value="'.$row2['price'].'">';
+          echo '<input type="hidden" name="title'.$row2['id'].'" value="'.$row2['title'].'">';
+          echo '<input type="hidden" name="price'.$row2['id'].'" value="'.$row2['price'].'">';
+          echo '<input type="hidden" name="shipping'.$row2['id'].'" value="'.$row2['shipping'].'">';
+          echo '<input type="hidden" name="tax'.$row2['id'].'" value="'.$row2['tax'].'">';
+          echo '<input type="hidden" name="product'.$row2['id'].'" value="'.$row2['id'].'">';
           echo  '</article>';
       };
     };
