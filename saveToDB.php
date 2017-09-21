@@ -1,13 +1,27 @@
 <?php
 $mem_id = $_COOKIE['id'];
+require_once('config.php');
 
+$token  = $_POST['stripeToken'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
 $creditcard = $_POST['creditcard'];
 $subTotal = $_POST['subTotal'];
+$stripeTotal = $subTotal * 100;
 $products = $_POST['productArray'];
+
+$customer = \Stripe\Customer::create(array(
+    'email' => $email,
+    'source'  => $token
+));
+
+$charge = \Stripe\Charge::create(array(
+    'customer' => $customer->id,
+    'amount'   => $stripeTotal,
+    'currency' => 'usd'
+));
 
 require_once('variable.php');
 
@@ -27,6 +41,8 @@ $query2 = "DELETE FROM cart WHERE mem_id=$mem_id";
 $result2 = mysqli_query($dbconnect, $query2) or die('delete query failed');
 
 mysqli_close($dbconnect);
+
+
 
 include 'head.php';  
 
