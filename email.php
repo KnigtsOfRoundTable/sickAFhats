@@ -1,5 +1,12 @@
 <?php
+$id = $_COOKIE['id'];
+require_once('variable.php');
+$dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
+$query = "SELECT * FROM member WHERE id=$id";
+$result = mysqli_query($dbconnect, $query) or die('send message query failed');
+$found = mysqli_fetch_array($result);
 
+mysqli_close($dbconnect);
 include 'head.php';
 
 ?>
@@ -17,8 +24,18 @@ include 'head.php';
 <div class="col-sm-1"></div>
   <div class="col-sm-10">
     <article class="clearfix panel panel-default">
-      <form action="sendEmail.php" method="POST" enctype="multipart/form-data">
+      <form action="contactUsSend.php" method="POST" enctype="multipart/form-data">
 					<div class="col-sm-12">
+
+						<div class="form-group">
+						  <label class="control-label">Your Email</label>
+						  <div class="controls">
+							<?php
+							echo '<input id="email" name="email" placeholder="your-email@email.com" class="form-control input-lg requiredField" type="text" required="" oninvalid="this.setCustomValidity("Please enter your email.")" oninput="setCustomValidity("")" value="' . $found['email'] . '">';
+
+							?>
+						  </div>
+						</div><!-- End subject  input -->
 
 						<div class="form-group">
 						  <label class="control-label">Subject</label>

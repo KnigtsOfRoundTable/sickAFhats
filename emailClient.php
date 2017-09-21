@@ -30,7 +30,7 @@ include 'head.php';
 						  <label class="control-label">Message</label>
 						  <div class="controls">
               <textarea id="message" rows="8" cols="40" name="message" placeholder="Message" class="form-control input-lg" type="text" required="" oninvalid="this.setCustomValidity('Please enter your message.')" oninput="setCustomValidity('')"></textarea>
-                <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
+                <?php echo '<input type="hidden" name="email" value="'. $id . '">'; ?>
 						  </div>
 						</div><!-- End message input -->
 

@@ -3,10 +3,12 @@ require_once('variable.php');
 
 $subject = $_POST['subject'];
 $message = $_POST['message'];
-$to = $_POST['email'];
-$from = "kylejohnson2612@gmail.com";
+$from = $_POST['email'];
+$to = "kylejohnson2612@gmail.com";
+  
+$newMessage = "Hi Hat Team,\n You have a message from $from.\nMessage:\n$message";
 
-mail($to, $subject, $message, 'From:' . $from);
+mail($to, $subject, $newMessage, 'From:' . $from);
 
 include 'head.php';  
 
@@ -17,7 +19,7 @@ include 'head.php';
   <div class="col-xs-10 text-center">
     <article class="clearfix panel panel-default">
       <?php
-      echo '<h1>Success!</h1><p>Your email has been sent to:'. $to . '.</p>';
+      echo '<h1> Thanks you</h1><p>A representative will contact you shortly. </p>';
       ?>
       <br /><br />
     </article>
