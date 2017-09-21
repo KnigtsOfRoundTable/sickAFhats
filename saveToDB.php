@@ -1,6 +1,8 @@
 <?php
 $mem_id = $_COOKIE['id'];
+require_once('config.php');
 
+$token  = $_POST['stripeToken'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -8,6 +10,17 @@ $address = $_POST['address'];
 $creditcard = $_POST['creditcard'];
 $subTotal = $_POST['subTotal'];
 $products = $_POST['productArray'];
+
+$customer = \Stripe\Customer::create(array(
+    'email' => $email,
+    'source'  => $token
+));
+
+$charge = \Stripe\Charge::create(array(
+    'customer' => $customer->id,
+    'amount'   => $subTotal,
+    'currency' => 'usd'
+));
 
 require_once('variable.php');
 
@@ -28,22 +41,7 @@ $result2 = mysqli_query($dbconnect, $query2) or die('delete query failed');
 
 mysqli_close($dbconnect);
 
-require_once('config.php');
 
-$token  = $_POST['stripeToken'];
-
-$customer = \Stripe\Customer::create(array(
-    'email' => $email,
-    'source'  => $token
-));
-
-$charge = \Stripe\Charge::create(array(
-    'customer' => $customer->id,
-    'amount'   => 5000,
-    'currency' => 'usd'
-));
-
-echo '<h1>Successfully charged $50.00!</h1>';
 
 include 'head.php';  
 

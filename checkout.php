@@ -100,10 +100,6 @@ include 'head.php';
 
       <div class="form-group">
       <span>Address <input type="text" name="address" value="'.$foundMember['address'] .'" class="form-control"></span>
-      </div>
-
-      <div class="form-group">
-      <span>Credit Card Number<input type="number" name="creditcard" value="'.$foundMember['creditcard'] .'" class="form-control"></span>
       </div>';
       
     ?>
@@ -117,7 +113,7 @@ include 'head.php';
       echo'<h1 class="text-center">Subtotal: $' . $subTotal . '</h1>';
 
       ?>
-      <br /><br />
+      <br />
 
       <div class="text-center">
         <script
