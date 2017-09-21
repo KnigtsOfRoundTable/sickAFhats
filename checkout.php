@@ -63,9 +63,9 @@ $stripeSubTotal = $subTotal * 100;
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
-$query = "SELECT * FROM member";
+$query = "SELECT * FROM member WHERE id=$mem_id";
 $resultMember = mysqli_query($dbconnect, $query) or die('Member query failed');
-
+$foundMember = mysqli_fetch_array($resultMember);
 
 $query2 = "SELECT * FROM cart";
 $resultCart = mysqli_query($dbconnect, $query2) or die('Cart query failed');
@@ -87,37 +87,29 @@ include 'head.php';
   <article class="clearfix panel panel-default">
     
     <?php
-    while($row1 = mysqli_fetch_array($resultMember)){
-      if($row1['id'] == $mem_id){
       echo '<h1 class="text-center">Your Information</h1><div class="form-group">
-      <span>Name <input type="text" name="name" value="'.$row1['name'] .'" class="form-control"></span>
+      <span>Name <input type="text" name="name" value="'.$foundMember['name'] .'" class="form-control"></span>
       </div>
       <div class="form-group">
-      <span>Email <input type="text" name="email" value="'.$row1['email'] .'" class="form-control"></span>
-      </div>
-
-      <div class="form-group">
-      <span>Phone <input type="tel" name="phone" value="'.$row1['phone'] .'" class="form-control"></span>
+      <span>Email <input type="text" name="email" value="'.$foundMember['email'] .'" class="form-control"></span>
       </div>
 
       <div class="form-group">
-      <span>Address <input type="text" name="address" value="'.$row1['address'] .'" class="form-control"></span>
+      <span>Phone <input type="tel" name="phone" value="'.$foundMember['phone'] .'" class="form-control"></span>
       </div>
 
       <div class="form-group">
-      <span>Credit Card Number<input type="number" name="creditcard" value="'.$row1['creditcard'] .'" class="form-control"></span>
+      <span>Address <input type="text" name="address" value="'.$foundMember['address'] .'" class="form-control"></span>
+      </div>
+
+      <div class="form-group">
+      <span>Credit Card Number<input type="number" name="creditcard" value="'.$foundMember['creditcard'] .'" class="form-control"></span>
       </div>';
-      }
-    }
-    print_r($stripe);
+      
     ?>
 
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          email = "<?php $email ?>"
-          data-key="<?php echo $stripe['publishable_key']; ?>"
-          data-description="Access for a year"
-          data-amount="<?php echo $stripeSubTotal ?>"
-          data-locale="auto"></script>
+    
+
     <?php
       echo '<input type="hidden" name="subTotal" value="'.$subTotal .'">
       <input type="hidden" name="productArray" value="'.$stringProducts .'">';
@@ -128,7 +120,17 @@ include 'head.php';
       <br /><br />
 
       <div class="text-center">
-        <button type="submit" class="btn btn-success btn-lg submit-btn" name="submit">Place Order</button>
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-email= "<?php echo $foundMember['email']; ?>"
+          data-key="<?php echo $stripe['publishable_key']; ?>"
+          data-amount="<?php echo $stripeSubTotal ?>"
+          data-name="Team Hats"
+          data-description="Selling hats the cool way."
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-allow-remember-me="false">
+        </script>
       </div>
   
       <br /><br />
