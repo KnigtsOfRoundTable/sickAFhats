@@ -9,6 +9,7 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
 $creditcard = $_POST['creditcard'];
 $subTotal = $_POST['subTotal'];
+$stripeTotal = $subTotal * 100;
 $products = $_POST['productArray'];
 
 $customer = \Stripe\Customer::create(array(
@@ -18,7 +19,7 @@ $customer = \Stripe\Customer::create(array(
 
 $charge = \Stripe\Charge::create(array(
     'customer' => $customer->id,
-    'amount'   => $subTotal,
+    'amount'   => $stripeTotal,
     'currency' => 'usd'
 ));
 
