@@ -1,5 +1,6 @@
 <?php
 require_once('variable.php');
+require_once('config.php');
 
 $mem_id = $_COOKIE['id'];
 $productArray = array();
@@ -58,7 +59,7 @@ $shippingTotal = array_sum($shippingArray);
 $taxTotal = array_sum($taxArray);
 
 $subTotal =  $priceTotal + $shippingTotal + $taxTotal;
-
+$stripeSubTotal = $subTotal * 100;
 
 $dbconnect = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE) or die('connection failed');
 
@@ -77,6 +78,7 @@ $foundProduct = mysqli_fetch_array($resultProduct);
 
 include 'head.php';
  ?>
+
 <form action="saveToDB.php" method="POST" enctype="multipart/form-data" class="form-horizontal padding-sm">
 <br /><br />
 <div class="row">
@@ -104,15 +106,24 @@ include 'head.php';
 
       <div class="form-group">
       <span>Credit Card Number<input type="number" name="creditcard" value="'.$row1['creditcard'] .'" class="form-control"></span>
-      </div>
+      </div>';
+      }
+    }
+    print_r($stripe);
+    ?>
 
-      <input type="hidden" name="subTotal" value="'.$subTotal .'">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          email = "<?php $email ?>"
+          data-key="<?php echo $stripe['publishable_key']; ?>"
+          data-description="Access for a year"
+          data-amount="<?php echo $stripeSubTotal ?>"
+          data-locale="auto"></script>
+    <?php
+      echo '<input type="hidden" name="subTotal" value="'.$subTotal .'">
       <input type="hidden" name="productArray" value="'.$stringProducts .'">';
 
       echo'<h1 class="text-center">Subtotal: $' . $subTotal . '</h1>';
 
-    }
-  }
       ?>
       <br /><br />
 
