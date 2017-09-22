@@ -32,7 +32,7 @@ include 'head.php';
     echo '<p>Email: ' . $row['email'] . '<p>';
     echo '<p>Phone: ' . $row['phone'] . '<p>';
     echo '<p>Address: ' . $row['address'] . '<p>';
-    echo '<p>Credit Card: ' . $row['creditcard'] . '<p>';
+    echo '<p>Stripe Payment ID: ' . $row['creditcard'] . '<p>';
     echo '<p>Products Ordered: ' . $row['products'] . '<p>';
     echo '<p>Subtotal: $' . $row['subtotal'] . '<p>';
     echo '<p>Date Ordered: ' . $row['date'] . '<p>';
