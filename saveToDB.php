@@ -7,7 +7,6 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
-$creditcard = $_POST['creditcard'];
 $subTotal = $_POST['subTotal'];
 $stripeTotal = $subTotal * 100;
 $products = $_POST['productArray'];
@@ -22,6 +21,8 @@ $charge = \Stripe\Charge::create(array(
     'amount'   => $stripeTotal,
     'currency' => 'usd'
 ));
+
+$creditcard = $charge->id;
 
 require_once('variable.php');
 
