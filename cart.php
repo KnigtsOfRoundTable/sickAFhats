@@ -19,6 +19,7 @@ include 'head.php';
   <div class="col-sm-10 text-center">
 	<article class="clearfix panel panel-default">
   	<h1>Your Cart</h1>
+    <a href="products.php" class="padding-sm"><button class="btn btn-success btn-lg">Shop Some More</button></a>
 	</article>
   </div>
 </div>
@@ -59,7 +60,7 @@ while($row1 = mysqli_fetch_array($result1)){
 	<div class="col-sm-1 text-center"></div>
   <div class="col-sm-10 text-center">
     <br /><br />
-      <a href="products.php" class="padding-sm" style="margin-right: 50px;"><button class="btn btn-success btn-lg">Shop Some More</button></a>
+      
       <input type="submit"  class="btn btn-lg btn-success" name="submit" value="Proceed to Checkout" id="submit"/>
       <br /><br /><br /><br />
   </div>
