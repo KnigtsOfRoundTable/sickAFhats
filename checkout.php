@@ -87,20 +87,38 @@ include 'head.php';
   <article class="clearfix panel panel-default">
     
     <?php
-      echo '<h1 class="text-center">Your Information</h1><div class="form-group">
-      <span>Name <input type="text" name="name" value="'.$foundMember['name'] .'" class="form-control"></span>
-      </div>
-      <div class="form-group">
-      <span>Email <input type="text" name="email" value="'.$foundMember['email'] .'" class="form-control"></span>
-      </div>
+      if($mem_id == 0){
+        echo '<h1 class="text-center">Your Information</h1><div class="form-group">
+        <span>Name <input type="text" name="name" value="Testing" required class="form-control"></span>
+        </div>
+        <div class="form-group">
+        <span>Email <input type="text" name="email" value="" required class="form-control"></span>
+        </div>
 
-      <div class="form-group">
-      <span>Phone <input type="tel" name="phone" value="'.$foundMember['phone'] .'" class="form-control"></span>
-      </div>
+        <div class="form-group">
+        <span>Phone <input type="tel" name="phone" value="" required class="form-control"></span>
+        </div>
 
-      <div class="form-group">
-      <span>Address <input type="text" name="address" value="'.$foundMember['address'] .'" class="form-control"></span>
-      </div>';
+        <div class="form-group">
+        <span>Address <input type="text" name="address" value="" required class="form-control"></span>
+        </div>';
+      }else{
+        echo '<h1 class="text-center">Your Information</h1><div class="form-group">
+        <span>Name <input type="text" name="name" value="'.$foundMember['name'] .'" required class="form-control"></span>
+        </div>
+        <div class="form-group">
+        <span>Email <input type="text" name="email" value="'.$foundMember['email'] .'" required class="form-control"></span>
+        </div>
+
+        <div class="form-group">
+        <span>Phone <input type="tel" name="phone" value="'.$foundMember['phone'] .'" required class="form-control"></span>
+        </div>
+
+        <div class="form-group">
+        <span>Address <input type="text" name="address" value="'.$foundMember['address'] .'" required class="form-control"></span>
+        </div>';
+      }
+      
       
     ?>
 
