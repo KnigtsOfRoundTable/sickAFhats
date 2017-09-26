@@ -60,8 +60,17 @@ while($row1 = mysqli_fetch_array($result1)){
 	<div class="col-sm-1 text-center"></div>
   <div class="col-sm-10 text-center">
     <br /><br />
-      
-      <input type="submit"  class="btn btn-lg btn-success" name="submit" value="Proceed to Checkout" id="submit"/>
+<?php 
+
+$query3 = "SELECT * FROM cart";
+$result3 = mysqli_query($dbconnect, $query3) or die('cart query failed');
+while($row3 = mysqli_fetch_array($result3)){
+  if($row3['mem_id'] == $mem_id){
+    echo '<input type="submit"  class="btn btn-lg btn-success" name="submit" value="Proceed to Checkout" id="submit"/>';
+    break;
+  };
+};
+?>
       <br /><br /><br /><br />
   </div>
 </div>
