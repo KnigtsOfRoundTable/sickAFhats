@@ -15,8 +15,8 @@
         <div class="col-xs-4">
             <br>
             <div class="text-center">
-                <p class="bigFooter">ROBYN'S BISTRO</p> 
-                <p>INSANELY GOOD FOOD </p>
+                <p class="bigFooter">Sick AF Hats</p> 
+                <!-- <p>INSANELY GOOD FOOD </p> -->
                 <p>&copy; 2017</p>
             </div>
         </div>
