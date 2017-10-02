@@ -58,7 +58,7 @@ nav {
 nav ul li a {
     color: black;
 }
-.nav-tabs {
+/*.nav-tabs {
     border:none;
 }
 .searchDesk {
@@ -74,6 +74,58 @@ nav ul li a {
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.5);
     color: #000
+}*/
+/*========CUSTOM NAVIGATION STYLES===========*/
+.myNavBar {
+    display: block;
+    width: 102%;
+    margin-left: -1%;
+    background-color: #1f2833;
+    clear: both;
+    height: 50px;
+    color: #c5c6c7;
+}
+.mainNav{
+    float: left;
+    display: block;
+    padding-left: 0;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.mainNav li {
+    float: left;
+    list-style-type: none;
+    display: inline-block;
+    transition: .3s;
+}
+.mainNav li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.15em;
+    padding: .4em 10px .3em 10px;
+    text-align: center;
+    color: #4bd8d2;
+    transition: .3s;
+}
+.mainNav li:hover a {
+    background-color: #eff6ff;
+    color: #2568ba;
+}
+.logNav{
+    float: right;
+    display: block;
+    margin-right: 10px;
+}
+.myNavBar .logNav a {
+    color: #4bd8d2;
+    font-size: 1.15em;
+    padding: .4em 10px .3em 10px;
+    text-align: center;
+    margin-top: 5px;
+    display: inline-block;
+}
+.myNavBar .logNav a:hover {
+    color: #2568ba;
 }
 /*===========BODY===================*/
 .content .container {
