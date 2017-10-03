@@ -34,7 +34,7 @@ include 'head.php';
 
 <div class="row">
   <div class="col-xs-12 text-center">
-     <br /><h1>Shopping Cart</h1>
+     <br />
     <br />
   </div>
 </div>
