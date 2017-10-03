@@ -174,15 +174,54 @@ blockquote {
 .card img {
     width: 100%;
 }
+/*===========BUTTONS===================*/
+.primary_button {
+    margin: .75em 0;
+    display: inline-block;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #51bcb5;
+    color: #fff;
+    padding: .5em;
+    transition: background .3s, border-color .3s;
+    background: #60dbd3;
+    background: -moz-linear-gradient(top, #60dbd3 0%, #51bcb5 100%);
+    background: -webkit-linear-gradient(top, #60dbd3 0%,#51bcb5 100%);
+    background: linear-gradient(to bottom, #60dbd3 0%,#51bcb5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60dbd3', endColorstr='#51bcb5',GradientType=0 );}
+.primary_button:hover {
+    background: #59CCC4;
+    background: -moz-linear-gradient(top, #59CCC4 0%, #449b95 100%);
+    background: -webkit-linear-gradient(top, #59CCC4 0%,#449b95 100%);
+    background: linear-gradient(to bottom, #59CCC4 0%,#449b95 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59CCC4', endColorstr='#449b95',GradientType=0 );
+    border-color: #3f9690;
+    color: #fff;
+}
+a.delete_button {
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #BA5351;
+    color: #fff;
+    padding: .5em;
+    transition: background .3s;
+    background: #BA5351;
+}
+a.delete_button:hover {
+    color: #fff;
+    background: #F23D3A;
+    text-decoration: none;
+}
 .addCartBtn {
     margin: .75em 0;
     display: inline-block;
-    font-size: 1em;
+    font-size: 1.2em;
     border-radius: 0 5px 5px 0;
     background-color: #51bcb5;
     border: 1px solid #51bcb5;
     color: #fff;
-    padding: .4em;
+    padding: .5em;
     transition: background-color .3s, border-color .3s, color .3s;
 }
 .addCartBtn:hover {
@@ -192,12 +231,12 @@ blockquote {
 }
 .priceTag {
     display: inline-block;
-    font-size: 1em;
+    font-size: 1.2em;
     border-radius: 5px 0px 0px 5px;
     background-color: #9f9fa0;
     border: 1px solid #9f9fa0;
     color: #fff;
-    padding: .4em;
+    padding: .5em;
 }
 /*===========FOOTER===================*/
 footer.container {
