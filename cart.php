@@ -40,7 +40,7 @@ while($row1 = mysqli_fetch_array($result1)){
           echo  '<div class="col-xs-8"><h3>' . $row2['title'] . '</h3>';
           echo '<p>Price: $' . $row2['price'] . '</p>';
           echo  '<p>'. $row2['shortdescription'] . '</p>';
-          echo '<div class="form-group"><span>Quantity<input type="number" name="amount'.$row2['id'].'" value="" class="form-control" required></span></div><br /><br />';
+          echo '<div class="form-group"><span>Quantity<input type="number" name="amount'.$row2['id'].'" value="1" class="form-control" required></span></div><br /><br />';
           echo '<a class="delete_button" href=deleteCartItem.php?id='.$row1['id'].'>Remove</a>';
           echo '<input type="hidden" name="title'.$row2['id'].'" value="'.$row2['title'].'">';
           echo '<input type="hidden" name="price'.$row2['id'].'" value="'.$row2['price'].'">';
@@ -60,7 +60,18 @@ while($row1 = mysqli_fetch_array($result1)){
 	<div class="col-sm-1 text-center"></div>
   <div class="col-sm-10 text-center">
     <br /><br />
-    <input type="submit"  class="primary_button" name="submit" value="Proceed to Checkout" id="submit"/>     
+<?php 
+
+$query3 = "SELECT * FROM cart";
+$result3 = mysqli_query($dbconnect, $query3) or die('cart query failed');
+while($row3 = mysqli_fetch_array($result3)){
+  if($row3['mem_id'] == $mem_id){
+    echo '<input type="submit"  class="primary_button" name="submit" value="Proceed to Checkout" id="submit"/>';
+    break;
+  };
+};
+?>
+
       <br /><br /><br /><br />
   </div>
 </div>
