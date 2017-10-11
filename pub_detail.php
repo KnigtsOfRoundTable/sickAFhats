@@ -33,7 +33,8 @@ include 'head.php';
 
 <div class="row">
   <div class="col-xs-12 text-center">
-    <br /><br />
+     <br />
+    <br />
   </div>
 </div>
 
@@ -45,12 +46,10 @@ include 'head.php';
       echo '<form action="pub_detail.php" method="POST" enctype="multipart/form-data" class="form-horizontal padding-sm">';
       echo '<div class="col-xs-4"><img src="'. $found['picture'] .'" alt="Products" /> </div>';
       echo '<div class="col-xs-8"><h3>' . $found['title'] . '</h3>';
-      echo '<p>Price: $' . $found['price'] .'</p>';
+      echo '<div class="priceTag">$' . $found['price'] .'</div><button type="submit" class="addCartBtn" name="submit">Add to Cart</button>';
       echo '<p>' . $found['longdescription'] . '</p>';
       echo '<input type="hidden" value="'. $product_id . '" name="newProductID">';
-      echo '<br /><button type="submit" class="btn btn-success" name="submit">Add to Cart</button></div>';
       echo '</form></article>';
-      
     ?>
 
   </div>

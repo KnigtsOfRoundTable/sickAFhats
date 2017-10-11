@@ -19,7 +19,7 @@ include 'head.php';
   <div class="col-sm-10 text-center">
 	<article class="clearfix panel panel-default">
   	<h1>Your Cart</h1>
-    <a href="products.php" class="padding-sm"><button class="btn btn-success btn-lg">Shop Some More</button></a>
+     <a href="products.php" class="padding-sm"><button class="primary_button">Shop Some More</button></a>
 	</article>
   </div>
 </div>
@@ -41,7 +41,7 @@ while($row1 = mysqli_fetch_array($result1)){
           echo '<p>Price: $' . $row2['price'] . '</p>';
           echo  '<p>'. $row2['shortdescription'] . '</p>';
           echo '<div class="form-group"><span>Quantity<input type="number" name="amount'.$row2['id'].'" value="1" class="form-control" required></span></div><br /><br />';
-          echo '<a style="color:red;" href=deleteCartItem.php?id='.$row1['id'].'> Remove</a>';
+          echo '<a class="delete_button" href=deleteCartItem.php?id='.$row1['id'].'>Remove</a>';
           echo '<input type="hidden" name="title'.$row2['id'].'" value="'.$row2['title'].'">';
           echo '<input type="hidden" name="price'.$row2['id'].'" value="'.$row2['price'].'">';
           echo '<input type="hidden" name="shipping'.$row2['id'].'" value="'.$row2['shipping'].'">';
@@ -66,11 +66,12 @@ $query3 = "SELECT * FROM cart";
 $result3 = mysqli_query($dbconnect, $query3) or die('cart query failed');
 while($row3 = mysqli_fetch_array($result3)){
   if($row3['mem_id'] == $mem_id){
-    echo '<input type="submit"  class="btn btn-lg btn-success" name="submit" value="Proceed to Checkout" id="submit"/>';
+    echo '<input type="submit"  class="primary_button" name="submit" value="Proceed to Checkout" id="submit"/>';
     break;
   };
 };
 ?>
+
       <br /><br /><br /><br />
   </div>
 </div>

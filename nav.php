@@ -1,6 +1,6 @@
-<nav>
+<div class="myNavBar">
 
-<ul class="nav nav-tabs">
+<ul class="mainNav">
   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
   <li><a href="products.php"><i class="fa fa-automobile"></i> Products</a></li>
   <li><a href="email.php"><i class="fa fa-bell"></i> Contact</a></li>
@@ -28,7 +28,7 @@
   ?>)</a></li>
 </ul>
 
-<div class="searchDesk">
+<div class="logNav">
   <?php
       if(isset($_COOKIE['username'])){
         echo 'Welcome, <a href="updateUser.php?id='.$_COOKIE['id'].'">';
@@ -40,6 +40,6 @@
     ?>
 </div>
 
-</nav><!-- end Navigation -->
+</div><!-- end myNavBar -->
 
 
