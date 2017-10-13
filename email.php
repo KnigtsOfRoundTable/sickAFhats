@@ -52,7 +52,7 @@ include 'head.php';
 						  </div>
 						</div><!-- End message input -->
 
-						<input type="submit" value="Send" class="submitBtn btn btn-success btn-lg-2" id="submit" />
+						<input type="submit" value="Send" class="primary_button" id="submit" />
 
 					</div>
       	</form><!-- End contact-form -->

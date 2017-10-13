@@ -23,7 +23,7 @@ include 'head.php';
       echo '<div class="col-xs-8"><h3>' . $found['title'] . '</h3>';
       echo '<p>Price: $' . $found['price'] . ' | Shipping: $' . $found['shipping'] . ' | Tax: $' . $found['tax'] .'</p>';
       echo '<p>' . $found['longdescription'] . '</p>';
-      echo '<br /><a href="update.php?id='.$found['id'].'"><button class="btn btn-success">Update Product</button></a></div>';
+      echo '<br /><a href="update.php?id='.$found['id'].'"><button class="primary_button">Update Product</button></a></div>';
       echo '</article>';
       
     ?>
