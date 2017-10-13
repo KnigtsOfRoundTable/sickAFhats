@@ -57,7 +57,7 @@ include 'head.php';
             <span>Password <input type="password" name="pw" value="" class="form-control" required></span>
           </div>
 
-          <button type="submit" class="btn btn-success" name="submit">Log in</button>
+          <button type="submit" class="primary_button" name="submit">Log in</button>
 
         </form>
       </article>
