@@ -140,6 +140,10 @@ figure img{
     margin: 0 auto;
     width: 80%;
 }
+figure#manageImg {
+    width: 60%;
+    margin: 0 auto;
+}
 figure#manageImg img{
     display: block;
     margin: 0 auto;

@@ -54,7 +54,7 @@ include 'head.php';
 
         <br /><br />
         <div class="text-center">
-          <input type="submit"  class="btn btn-lg btn-success" name="submit" value="Update" id="submit"/>
+          <input type="submit"  class="primary_button" name="submit" value="Update" id="submit"/>
         </div>
         <br /><br />
 

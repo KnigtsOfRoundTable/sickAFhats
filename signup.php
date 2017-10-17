@@ -84,7 +84,7 @@ include 'head.php';
           <span>Retype Password <input type="password" name="pw2" value="" class="form-control" required></span>
         </div>
 
-        <button type="submit" class="btn btn-success" name="submit">Sign up!</button>
+        <button type="submit" class="primary_button" name="submit">Sign up!</button>
 
       </div>
       </form>

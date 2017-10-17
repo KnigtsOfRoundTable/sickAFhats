@@ -14,7 +14,8 @@ include 'head.php';
 <div class="row">
     <div class="col-xs-12 text-center">
         <h1>Welcome to Sick AF Hats</h1>
-        <p class="centerText">Alcatra turkey salami chicken biltong short loin cupim frankfurter ham andouille, shankle sirloin. T-bone ball tip prosciutto meatball, tri-tip shankle beef ribs tail. Turkey rump short ribs, shank bresaola pork chop leberkas short loin ball tip. Ground round sirloin frankfurter pastrami. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Swine alcatra spare ribs shankle landjaeger.</p>
+
+        <p class="centerText">Aesthetic dolor copper mug incididunt, officia shabby chic you probably haven't heard of them. Sriracha humblebrag pok pok ad pinterest. Shaman polaroid deep v laboris ut gluten-free kombucha synth farm-to-table enim la croix single-origin coffee. Helvetica cloud bread venmo, normcore cray brooklyn dolor butcher squid man bun salvia yuccie. Lo-fi irure qui la croix, humblebrag four dollar toast swag. Cronut culpa irony meh velit tilde 3 wolf moon austin bespoke tattooed.</p>
     </div>
 </div>
 
@@ -24,13 +25,13 @@ include 'head.php';
     </article>
 
     <article class="col-xs-6">
-        <blockquote>"Alcatra turkey salami chicken biltong short loin cupim frankfurter ham andouille, shankle sirloin. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Swine alcatra spare ribs shankle landjaeger."<br>-The Chef</blockquote> 
+        <blockquote>"       Four loko ex raclette keffiyeh mustache, ethical fixie heirloom edison bulb. Ennui tempor brunch, keytar fugiat taxidermy fam vaporware. Wolf affogato ugh master cleanse consequat, 3 wolf moon man bun before they sold out."<br>-The Swag</blockquote> 
     </article>
 </div><!--end row-->
 
 <div class="row">
     <article class="col-xs-6">
-        <blockquote>"Ground round sirloin frankfurter pastrami. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Swine alcatra spare ribs shankle landjaeger. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Swine alcatra spare ribs shankle landjaeger."<br>-Food Review</blockquote> 
+        <blockquote>"Ex gentrify irure cardigan fixie dolore four dollar toast. Duis velit migas, plaid asymmetrical palo santo pitchfork irony. VHS normcore viral in, meggings before they sold out semiotics. Heirloom street art cred DIY humblebrag duis, locavore sriracha snackwave ennui four dollar toast. Aute hoodie aesthetic, fugiat man bun cornhole you probably haven't heard of them jianbing shaman farm-to-table meggings affogato poke gastropub tofu."<br>-The YOLO</blockquote> 
     </article>
 
     <article class="col-xs-6">
@@ -44,13 +45,13 @@ include 'head.php';
     </article>
 
     <article class="col-xs-6">
-        <blockquote>"Alcatra turkey salami chicken biltong short loin cupim frankfurter ham andouille. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Swine alcatra spare ribs shankle landjaeger."<br> -Review</blockquote> 
+        <blockquote>"Activated charcoal slow-carb commodo reprehenderit unicorn live-edge ipsum bushwick chillwave sustainable cred non poke farm-to-table pickled. Live-edge sartorial tousled polaroid tacos man braid hella vexillologist retro pug."<br> -Hipster</blockquote> 
     </article>
 </div><!--end row-->
 
 <div class="row">
     <article class="col-xs-6">
-        <blockquote>"Ground round sirloin frankfurter pastrami. Boudin shankle pastrami doner ground round burgdoggen. Pancetta chuck beef ribs drumstick meatball. Swine alcatra spare ribs shankle landjaeger. "<br>-Famous</blockquote> 
+        <blockquote>"Heirloom iceland snackwave, do ut marfa pinterest fixie dreamcatcher drinking vinegar pariatur YOLO. Anim PBR&B leggings lomo knausgaard, iPhone listicle shoreditch master cleanse letterpress keytar kitsch."<br>-Famous</blockquote> 
     </article>
 
     <article class="col-xs-6">

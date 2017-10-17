@@ -19,8 +19,8 @@ include 'head.php';
   	<h1>Manage Products</h1>
 		<p>View Details, Update the product, and delete it</p>
     <br /><br />
-      <a href="add.php" class="padding-sm"><button class="btn btn-success btn-lg">Add a new Product</button></a>
-      <a href="purchaseHistory.php"><button class="btn btn-success btn-lg">Purchase History</button></a>
+      <a href="add.php" class="padding-sm"><button class="primary_button">Add a new Product</button></a>
+      <a href="purchaseHistory.php"><button class="primary_button">Purchase History</button></a>
       <br /><br />
 	</article>
   </div>
