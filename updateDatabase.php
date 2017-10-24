@@ -50,9 +50,18 @@ if ($validImage == true){
 
     mysqli_close($dbconnect);
 
-    echo '<h1 class="text-center">'. $title . ' has been Updated</h1>';
+    ?>
 
-    header( "refresh:3;url=manage.php" );
+    <script type="text/javascript">
+    setTimeout(function () {
+        window.location.href= 'manage.php'; // the redirect goes here
+
+        },5000);
+    </script>
+
+   <?php echo '<h1 class="text-center">'. $title . ' has been Updated</h1>';
+
+    
 
 }else{
     echo '<br /><div class="text-center"><a href="add.php"> Please upload Image again</a></div><br />';
