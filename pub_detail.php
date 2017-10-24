@@ -2,6 +2,7 @@
 require_once('variable.php');
 
 $product_id = $_GET['id'];
+$mem_id = $_COOKIE['id'];
 
 if(isset($_POST['submit'])){
     $product_id = $_POST[newProductID];
