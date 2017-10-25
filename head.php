@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 
 <!-- This start file was build by Paul Cheney  -->
-<title>SickAFHats</title>
+<title>Legit Hats</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -33,7 +33,7 @@
 <header class="container">
     <div class="row">
         <div class="col-xs-12 text-center">
-            <h1>SICK AF HATS</h1>
+            <h1>LEGIT HATS</h1>
             <!-- <h2>INSANELY GOOD FOOD</h2> -->
             <img id="logo" src="img/logoG.png">
         </div>
