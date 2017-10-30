@@ -89,7 +89,7 @@ include 'head.php';
     <?php
       if($mem_id == 0){
         echo '<h1 class="text-center">Your Information</h1><div class="form-group">
-        <span>Name <input type="text" name="name" value="Testing" required class="form-control"></span>
+        <span>Name <input type="text" name="name" value="" required class="form-control"></span>
         </div>
         <div class="form-group">
         <span>Email <input type="text" name="email" value="" required class="form-control"></span>

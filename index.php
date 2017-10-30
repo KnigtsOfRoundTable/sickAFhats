@@ -13,7 +13,7 @@ include 'head.php';
 
 <div class="row">
     <div class="col-xs-12 text-center">
-        <h1>Welcome to Legit Hats</h1>
+        <h1>Welcome to The Hat Company</h1>
 
         <p class="centerText">Aesthetic dolor copper mug incididunt, officia shabby chic you probably haven't heard of them. Sriracha humblebrag pok pok ad pinterest. Shaman polaroid deep v laboris ut gluten-free kombucha synth farm-to-table enim la croix single-origin coffee. Helvetica cloud bread venmo, normcore cray brooklyn dolor butcher squid man bun salvia yuccie. Lo-fi irure qui la croix, humblebrag four dollar toast swag. Cronut culpa irony meh velit tilde 3 wolf moon austin bespoke tattooed.</p>
     </div>

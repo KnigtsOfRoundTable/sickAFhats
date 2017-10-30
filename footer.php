@@ -15,7 +15,7 @@
         <div class="col-xs-4">
             <br>
             <div class="text-center">
-                <p class="bigFooter">Legit Hats</p> 
+                <p class="bigFooter">The Hat Company</p> 
                 <!-- <p>INSANELY GOOD FOOD </p> -->
                 <p>&copy; 2017</p>
             </div>
